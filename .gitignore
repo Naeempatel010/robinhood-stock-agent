@@ -1,0 +1,18 @@
+credentials.py
+
+# Output files
+analysis.txt
+portfolio.txt
+portfolio_analysis.xlsx
+portfolio_history.json
+portfolio_snapshots.json
+portfolio_snapshots.json.gz
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.env
+
+# Robinhood auth pickle
+pickle.json
