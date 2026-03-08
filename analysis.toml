@@ -1,0 +1,62 @@
+# Portfolio Analyzer — Analysis Configuration
+# Pass this file with: python analyze.py --analysis --config analysis.toml
+#
+# All values shown are defaults.
+# Copy, rename, and modify to create custom profiles.
+
+[analyses]
+# Per-stock: valuation, P/E, P/B, P/S, debt, earnings growth YoY/QoQ, ROE,
+#            insider activity (open-market only), short interest signal
+fundamental = true
+
+# Per-stock: RSI, MACD, Bollinger Bands, SMA 50/200 crossovers,
+#            volume spike detection, support/resistance, trend direction, volatility
+technical = true
+
+# Per-stock: DCF intrinsic value and margin of safety (skipped for ETFs)
+dcf = true
+
+# Per-stock: news headline sentiment + analyst ratings + earnings estimate revisions
+#            + overall market sentiment
+sentiment = true
+
+# Buy candidates from HOT_TICKERS not currently in your portfolio
+hot_stocks = true
+
+# Portfolio structure: concentration risk per position, sector/category exposure,
+#                      ETF overlap detection, noise position flagging (<1%)
+portfolio = true
+
+# Macro & risk: beta/volatility vs market, 52-week high/low proximity,
+#               upcoming earnings & ex-dividend dates, geopolitical/sector risk flags
+macro_risk = true
+
+# Alerts: RSI overbought/oversold, Bollinger band breaches, volume spikes,
+#         MACD crossovers, short interest MoM spikes, open-market insider sells
+alerts = true
+
+# Comparative: stock vs S&P 500 and Nasdaq 100 over 1W/1M/3M/6M/1Y
+comparative = true
+
+# Portfolio equity/holdings trend across historical runs (needs ≥2 past runs)
+trend = true
+
+# Number of past runs to include in trend analysis (default: 5)
+trend_history_runs = 5
+
+# Per-node output quality evaluation + one retry if output is weak (default: true)
+evaluate_nodes = true
+
+[budget]
+# Maximum total spend per analysis run (USD)
+total_usd = 5.00
+
+# Stop analysis early if remaining budget falls below this (USD)
+reserve_usd = 0.50
+
+[report]
+# Write analysis.txt narrative report
+txt = true
+
+# Write portfolio_analysis.xlsx Excel workbook
+xlsx = true

@@ -1,18 +1,39 @@
 credentials.py
+.env
 
-# Output files
+# Database (contains credentials + personal financial data — never commit)
+portfolio_db.json
+portfolio_db.json.bak
+
+# Snapshot data directories
+data/
+
+# Legacy storage files
+portfolio_snapshots.json
+portfolio_snapshots.json.gz
+portfolio_history.json
+
+# Output files (regenerated each run)
 analysis.txt
 portfolio.txt
 portfolio_analysis.xlsx
-portfolio_history.json
-portfolio_snapshots.json
-portfolio_snapshots.json.gz
+
+# Robinhood auth session pickles (token cached locally by robin_stocks)
+robinhood.pickle
+pickle.json
 
 # Python
 __pycache__/
 *.pyc
 *.pyo
-.env
+*.pyd
+.pytest_cache/
+.venv/
+venv/
+env/
 
-# Robinhood auth pickle
-pickle.json
+# OS / IDE
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
